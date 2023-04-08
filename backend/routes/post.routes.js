@@ -58,34 +58,31 @@ postRoutes.delete("/:id", async (req, res) => {
 });
 
 // Increment the like count of a post by id
-postRoutes.post('/:id/like', async (req, res) => {
-    try {
-      const post = await postCollection.findById(req.params.id);
-      if (!post) throw Error('Post not found');
-      post.likes++;
-      const savedPost = await post.save();
-      res.json(savedPost);
-    } catch (error) {
-      res.status(400).json({ message: error.message });
-    }
+postRoutes.post("/:id/like", async (req, res) => {
+  try {
+    const post = await postCollection.findById(req.params.id);
+    if (!post) throw Error("Post not found");
+    post.likes++;
+    const savedPost = await post.save();
+    res.json(savedPost);
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
 });
 
 // Decrement the like count of a post by id. The count should not go below 0.
-postRoutes.post('/:id/unlike', async (req, res) => {
-    try {
-      const post = await postCollection.findById(req.params.id);
-      if (!post) throw Error('Post not found');
-      if (post.likes > 0) {
-        post.likes--;
-      }
-      const savedPost = await post.save();
-      res.json(savedPost);
-    } catch (error) {
-      res.status(400).json({ message: error.message });
+postRoutes.post("/:id/unlike", async (req, res) => {
+  try {
+    const post = await postCollection.findById(req.params.id);
+    if (!post) throw Error("Post not found");
+    if (post.likes > 0) {
+      post.likes--;
     }
+    const savedPost = await post.save();
+    res.json(savedPost);
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
 });
-
-
-
 
 module.exports = { postRoutes };
