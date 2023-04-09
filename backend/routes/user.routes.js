@@ -41,8 +41,9 @@ userRoutes.delete("/:id", async (req, res) => {
 
 //Update a user's name or bio by id
 userRoutes.put("/:id", async (req, res) => {
+  const {name , bio} = req.body
   try {
-    const updates = Object.keys(req.body);
+    const updates = Object.keys({name,bio});
     const allowedUpdates = ["name", "bio"];
     const isValidUpdate = updates.every((update) =>
       allowedUpdates.includes(update)

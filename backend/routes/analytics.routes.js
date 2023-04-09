@@ -6,8 +6,8 @@ const analyticsRoutes = express.Router();
 // Retrieve the total number of users
 analyticsRoutes.get("/users", async (req, res) => {
   try {
-    const count = await userCollection.countDocuments();
-    res.send({ count });
+    const data = await userCollection.find().sort({_id:-1});
+    res.send(data);
   } catch (error) {
     res.status(500).send(error);
   }
@@ -39,8 +39,8 @@ analyticsRoutes.get("/users/top-active", async (req, res) => {
 // Retrieve the total number of posts.
 analyticsRoutes.get("/posts", async (req, res) => {
   try {
-    const count = await postCollection.countDocuments();
-    res.json({ count });
+    const data = await postCollection.find().sort({_id:-1});
+    res.send(data);
   } catch (error) {
     res.status(400).json({ message: error.message });
   }

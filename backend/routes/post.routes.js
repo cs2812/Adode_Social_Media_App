@@ -51,7 +51,7 @@ postRoutes.delete("/:id", async (req, res) => {
     const post = await postCollection.findById(req.params.id);
     if (!post) throw Error("Post not found");
     await postCollection.findByIdAndDelete(req.params.id);
-    res.json({ message: "Post deleted" });
+    res.json(post);
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
