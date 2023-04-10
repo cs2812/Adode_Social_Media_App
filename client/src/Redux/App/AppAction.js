@@ -15,9 +15,10 @@ import {
   UPDATE_POST_SUCCESS,
   UPDATE_USER_SUCCESS,
 } from "./AppType";
-const basePost = "http://localhost:8080/posts";
-const baseUser = "http://localhost:8080/users";
-const baseAnalytics = "http://localhost:8080/analytics";
+const url = "https://adobe-server-w5qn.onrender.com"
+const basePost = `${url}/posts`;
+const baseUser = `${url}/users`;
+const baseAnalytics = `${url}/analytics`;
 
 // User Actions Hendlers
 
