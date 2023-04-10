@@ -1,7 +1,7 @@
 ## How to run backend on localhost
-1. backend > configs > db.js. in side db.js add you mongoDB atlas Database like.=> <const connection = mongoose.connect("MONGO_URL")/>;  
+1. backend > configs > db.js. in side db.js add you mongoDB atlas Database like.=> <b>const connection = mongoose.connect("MONGO_URL")</b>;  
 2. Run "npm i" inside backend command directoy 
-3. then run "npm start" to run server on <localhost:8080/>
+3. then run "npm start" to run server on <b>localhost:8080</b>
 
 ## Depolyed link
 <a src="https://adobe-server-w5qn.onrender.com/">Link :-</a> https://adobe-server-w5qn.onrender.com/
