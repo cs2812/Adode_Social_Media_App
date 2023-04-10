@@ -3,7 +3,7 @@
 2. Run "npm i" inside backend command directoy 
 3. then run "npm start" to run server on <b>localhost:8080</b>
 
-## Depolyed link
+## Backend depolyed link
 <a src="https://adobe-server-w5qn.onrender.com/">Link :-</a> https://adobe-server-w5qn.onrender.com/
 
 1. Or you can use Deployed link and replace this like with base URL in Frontend
@@ -14,4 +14,8 @@
 2. After replace URL with your link you need to run 2 command in terminal and client directory.
 3. npm i.
 4. npm start.
+
+## Frontend deployed link
+1. or you can check my project perfomance with deployed link :- https://socialtalk-cs2812.vercel.app/
+
 
