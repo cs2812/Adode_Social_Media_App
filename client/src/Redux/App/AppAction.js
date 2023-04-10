@@ -35,6 +35,7 @@ export const CreateUser = (form) => (dispatch) => {
 };
 
 export const GetSingleUser = (id) => (dispatch) => {
+  // console.log(id)
   axios
     .get(`${baseUser}/${id}`)
     .then((res) => {

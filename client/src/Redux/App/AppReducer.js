@@ -42,7 +42,7 @@ const AppReducer = (state = initialState, { type, payload }) => {
     case GET_SINGLE_USER_SUCCESS: {
       return {
         ...state,
-        singlePost: payload,
+        currentUser: payload,
       };
     }
     case UPDATE_USER_SUCCESS: {

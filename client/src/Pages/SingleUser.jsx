@@ -5,11 +5,16 @@ import {RiDeleteBin5Line} from "react-icons/ri"
 import { useDispatch, useSelector } from 'react-redux'
 import UserForm from '../Components/UserForm'
 import { DeleteUser, GetAllUser } from '../Redux/App/AppAction'
+import { useNavigate } from 'react-router-dom'
 
 const SingleUser = ({data}) => {
-    console.log(data)
+    // console.log(data)
+  const navigate = useNavigate()
   const {users} = useSelector((store)=>store.AppReducer)
   const dispatch = useDispatch()
+  const handleNavigate=()=>{
+    navigate(`/user/${data._id}`)
+  }
 
   useEffect(()=>{
     dispatch(GetAllUser())
@@ -21,7 +26,7 @@ const SingleUser = ({data}) => {
         <Image w="100%" b="100%" alt='avatar' src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"/>
       </Box>
         <Box textAlign={"left"}>
-            <Text fontWeight={"500"}>{data.name}</Text>
+            <Text onClick={handleNavigate} cursor={"pointer"} fontWeight={"500"}>{data.name}</Text>
             <Text fontStyle={"italic"}>{data.bio}</Text>
         </Box>
       </Flex>

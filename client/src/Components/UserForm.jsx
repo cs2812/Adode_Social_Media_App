@@ -50,6 +50,7 @@ const UserForm = ({ data }) => {
         bg={data ? "none" : "#d0d6db"}
         _hover={data ? { bg: "none" } : { bg: "#69ebb3" }}
         onClick={onOpen}
+        fontSize={["8px","12px","15px","20px"]}
       >
         {data ? <FiEdit size={"20px"} /> : "Register user"}
       </Button>

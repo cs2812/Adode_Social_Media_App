@@ -16,15 +16,17 @@ import {
 import { FiEdit } from "react-icons/fi";
 import { useDispatch } from "react-redux";
 import { CreatePost, UpdatePost } from "../Redux/App/AppAction";
+import { useParams } from "react-router-dom";
 const PostForm = ({ data }) => {
   // console.log("data",data)
+  const { id } = useParams();
   const dispatch = useDispatch();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const initialRef = React.useRef(null);
   const finalRef = React.useRef(null);
   const [form, setForm] = useState({
-    user_id: data?.user_id ? data.user_id : "6431cc72dff8f7c0dcae59bd",
-    content: data?.conten ? data.content : "",
+    user_id: data?.user_id? data.user_id : `${ id ||"6431cc72dff8f7c0dcae59bd"}`,
+    content: data?.conten? data.content : "",
   });
   // console.log("form",form)
 
@@ -43,6 +45,7 @@ const PostForm = ({ data }) => {
         bg={data ? "none" : "#d0d6db"}
         _hover={data ? { bg: "none" } : { bg: "#69ebb3" }}
         onClick={onOpen}
+        fontSize={["8px","12px","15px","20px"]}
       >
         {data ? <FiEdit size={"22px"} /> : "Add Post"}
       </Button>
@@ -68,7 +71,6 @@ const PostForm = ({ data }) => {
               />
             </FormControl>
           </ModalBody>
-
           <ModalFooter>
             <Button colorScheme="blue" mr={3} onClick={handleSubmit}>
               Save
